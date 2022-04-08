@@ -20,26 +20,24 @@
   </header>
   <main class="container-fluid">
     <div class="row justify-content-center bg-success">
-        <div class="col-6 -5 justify-content-between">
-          <form class="d-flex justify-content-between" onsubmit="">
+        <div class="col-6 justify-content-between">
+          <form class="d-flex justify-content-between" onsubmit="app.listsController.addList()">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Create new list" aria-label="Create new list..." aria-describedby="basic-addon1">
+              <input type="text" id="list" name="list"class="form-control" placeholder="Create new list" aria-label="Create new list...">
             </div>
-            <input type="color">
-            <button>Add</button>
+            <input id="color" name="color" class="ms-2" type="color">
+            <button type="submit" class="ms-2">Add</button>
           </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-3 bg-warning ms-5 mt-3">
-          <i class="mdi mdi-close text-end"></i>
+    <div class="row" id="lists">
+        <!-- <div class="col-3 bg-warning ms-5 mt-3">
           <div class="m-5 d-flex text-center">
             <h2>Lists Stuff below</h2>
+            <i class="mdi mdi-close text-end"></i>
           </div>
           <div>
-            <div class="mb-3">
-              <input type="checkbox"><span>Complete this please</span>
-            </div>
+
             <div class="mb-3">
               <input type="checkbox"><span>Complete this please</span>
             </div>
@@ -55,7 +53,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
     </div>
   </main>
 
