@@ -3,7 +3,7 @@ import { generateId } from "../Utils/generateId.js";
 
 export class List {
   constructor({color, id, list}) {
-    if (list == '') {
+    if (!list) {
       window.Error('You must enter a list name')
     }
 
@@ -27,13 +27,13 @@ export class List {
         <h2>${this.list}</h2>
         <i class="mdi mdi-close text-end"onclick="app.listsController.deleteList('${this.id}')"></i>
       </div>
-      <div id="tasks">${this.Tasks}</div>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Create new task..." aria-label="Create new task" aria-describedby="basic-addon2">
+      <div>${this.Tasks}</div>
+      <form class="input-group mb-3" onsubmit="app.tasksController.addTask('${this.id}')">
+        <input type="text" name="text" id="text" class="form-control" placeholder="Create new task..." aria-label="Create new task" aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button onsubmit="app.tasksController.addTask()">Add</button>
+          <button type="submit">Add</button>
         </div>
-      </div>
+      </form>
     </div>`
   }
 }

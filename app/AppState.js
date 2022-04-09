@@ -5,23 +5,10 @@ import { Task } from "./Models/Task.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/List').List[]} */
-  lists = [
-    new List ({
-      list: 'Checkpoint 3',
-      id: '',
-      color: 'red',
-    })
-  ]
+  lists = []
 
   /** @type {import('./Models/Task').Task[]} */
-  tasks = [
-    new Task ({
-      text: 'Finish Checkpoint 3',
-      checkbox: false,
-      listId: '',
-      id: ''
-    })
-  ]
+  tasks = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {

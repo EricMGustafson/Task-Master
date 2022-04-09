@@ -10,8 +10,8 @@ export class Task {
   
   get Template() {
     return `
-    <div class="mb-3">
-      <input type="checkbox"><span>${this.text}</span>
+    <div class="mb-3" id="${this.id}">
+      <input type="checkbox"><span>${this.text}</span><i class="mdi mdi-close" onclick="app.tasksController.deleteTask('${this.id}')"></i>
     </div>`
   }
 }
