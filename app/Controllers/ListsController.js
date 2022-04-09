@@ -17,6 +17,7 @@ export class ListsController{
     ProxyState.on('tasks', saveState)
 
     loadState()
+    _drawLists()
   }
 
   addList() {

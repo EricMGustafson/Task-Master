@@ -25,4 +25,8 @@ export class TasksController {
   deleteTask(id){
     tasksService.deleteTask(id)
   }
+
+  checkboxValue() {
+    tasksService.checkboxValue()
+  }
 }

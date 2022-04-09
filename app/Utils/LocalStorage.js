@@ -5,13 +5,13 @@ import { Task } from "../Models/Task.js"
 export function saveState() {
   let data = {
     lists: ProxyState.lists,
-    tasks: ProxyState.tasks,
+    tasks: ProxyState.tasks
   }
-  window.localStorage.setItem('Task Master', JSON.stringify(data))
+  window.localStorage.setItem('TaskMaster', JSON.stringify(data))
 }
 
 export function loadState() {
-  let data = window.localStorage.getItem('Task Master')
+  let data = window.localStorage.getItem('TaskMaster')
   if (data) {
     let obj = JSON.parse(data)
     ProxyState.lists = obj.lists.map(l => new List(l))
