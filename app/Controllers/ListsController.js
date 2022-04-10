@@ -42,7 +42,12 @@ export class ListsController{
     if (await Pop.confirm('Remove?', 'This will delete your ' + listText + ' list.', 'question', 'Remove')) {
       listsService.deleteList(listId)
       Pop.toast('List successfully removed', 'success', 'center', 1000)
+      }
     }
-  }
 
-}
+    // deleteList(listId) {
+    //   if (window.confirm('Are you sure')){
+    //     listsService.deleteList(listId)
+    //   }
+    // }
+  }

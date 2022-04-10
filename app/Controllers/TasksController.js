@@ -29,7 +29,13 @@ export class TasksController {
     Pop.toast('Task successfully deleted', 'success', 'center', 1000)
   }
 
-  checkboxValue(taskId) {
-    tasksService.checkboxValue(taskId)
+  // deleteTask(id){
+  //   if (window.confirm('Are you sure?')){
+  //     tasksService.deleteTask(id)
+  //   }
+  // }
+
+  checkboxValue(taskId, taskText) {
+    tasksService.checkboxValue(taskId, taskText)
   }
 }
