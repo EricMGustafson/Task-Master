@@ -39,10 +39,10 @@ export class List {
         <div class="text-end">
           <i class="mdi mdi-close text-end mdi-24px p-2 selectable ${listComplete ? '' : 'on-hover'}" onclick="app.listsController.deleteList('${this.id}', '${this.list}')"></i>
         </div>
-        <div class="py-2  text-center fs-2">
+        <div class="text-center fs-2">
           <span>${this.list}</span>
         </div>
-        <div class="text-center">
+        <div class="text-center pb-2">
           <span>${this.Unchecked}<b>/</b>${this.Total}</span>
         </div>
       </div>
