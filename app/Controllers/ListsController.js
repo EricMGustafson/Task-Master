@@ -1,6 +1,7 @@
 import { listsService } from "../Services/ListsServices.js";
 import { ProxyState } from "../AppState.js";
 import { loadState, saveState } from "../Utils/LocalStorage.js"
+import { Pop } from "../Utils/Pop.js"
 
 function _drawLists() {
   let listsTemplate = ''
@@ -17,7 +18,7 @@ export class ListsController{
     ProxyState.on('tasks', saveState)
 
     loadState()
-    _drawLists()
+
   }
 
   addList() {
@@ -31,13 +32,17 @@ export class ListsController{
         color: formElem.color.value
       }
       listsService.addList(formData)
+      formElem.reset()
     } catch (error) {
       console.error('ADD LIST ERROR')
       
     }
   }
-  deleteList(listId) {
-    listsService.deleteList(listId)
+  async deleteList(listId, listText) {
+    if (await Pop.confirm('Remove?', 'This will delete your ' + listText + ' list.', 'question', 'Remove')) {
+      listsService.deleteList(listId)
+      Pop.toast('List successfully removed', 'success', 'center', 1000)
+    }
   }
 
 }

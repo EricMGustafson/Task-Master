@@ -16,19 +16,21 @@
 
 <body>
   <header class="text-center container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <h1>Task Master</h1>
+    <div class="row vh-10">
+      <div class="col-12 d-flex justify-content-center align-items-center lg-font">
+        <span>
+          Task Master
+        </span>
       </div>
     </div>    
   </header>
   <main class="container-fluid">
-    <div class="row justify-content-start">
+    <div class="row justify-content-center vh-10">
         <div class="col-6 justify-content-between">
           <form class="d-flex justify-content-around" onsubmit="app.listsController.addList()">
             <div class="input-group my-4">
               <label class="form-check-label visually-hidden" name="list" for="list">List Name</label>
-              <input type="text" id="list" name="list" class="form-control rounded" placeholder="Create new list" aria-label="Create new list..." minlength="3" maxlength="15" required>
+              <input type="text" id="list" name="list" class="form-control rounded" placeholder="Create new list..." aria-label="Create new list" minlength="3" maxlength="15" required>
             </div>
             <div class="input-group my-4 mx-5">
               <label class="form-check-label visually-hidden" id="color" name="color" for="color">Choose Color</label>
@@ -48,43 +50,8 @@
           </form>
         </div>
     </div>
-    <div class="row" id="lists">
+    <div class="row g-0 flex-row flex-nowrap overflow-auto" id="lists">
       <!-- lists go here -->
-      
-      
-      
-      
-      
-      
-      <div id="${this.id}" class="col-3 bg-warning ms-5 mt-5 listCard">
-      
-      
-        <div class="m-5 d-flex text-center">
-      
-          <h2>${this.list}</h2>
- 
-          <i class="mdi mdi-close text-end"onclick="app.listsController.deleteList('${this.id}')"></i>
-      
-      
-        </div>
-                
-        <div>${this.Tasks}</div>
-            
-        <form class="input-group mb-3" onsubmit="app.tasksController.addTask('${this.id}')">
-          <input type="text" name="text" id="text" class="form-control" placeholder="Create new task..." aria-label="Create new task" aria-describedby="basic-addon2" minlength="3" maxlength="50" required>
-          <div class="input-group-append">
-            <button type="submit">Add</button>
-          </div>
-        </form>
-      
-      
-      
-      </div>
-
-
-
-
-
     </div>
   </main>
 
